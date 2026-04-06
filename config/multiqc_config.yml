@@ -1,0 +1,40 @@
+report_comment: "TTA HBV-OBI NGS Pipeline QC Report"
+report_header_info:
+  - Contact: "Anh-Genetics"
+  - Pipeline: "TTA_HBV-OBI_NGS"
+  - Version: "1.0.0"
+
+# Modules to run (in order)
+module_order:
+  - fastp
+  - fastqc
+  - samtools
+
+# FastQC
+fastqc_config:
+  status_checks:
+    warn:
+      per_base_sequence_quality: 28
+    fail:
+      per_base_sequence_quality: 20
+
+# samtools flagstat
+samtools_config:
+  flagstat_mapped_cutoff: 50
+
+# Suppress unwanted sections
+remove_sections:
+  - general_stats
+
+table_columns_visible:
+  FastQC:
+    percent_duplicates: true
+    percent_gc: true
+    avg_sequence_length: true
+    total_sequences: true
+  fastp:
+    filtering_result_passed_filter_reads: true
+    summary_before_filtering_q30_rate: true
+
+# Colours
+custom_logo_title: "TTA HBV-OBI NGS"

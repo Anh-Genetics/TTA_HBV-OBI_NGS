@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/Anh-Genetics/TTA_HBV-OBI_NGS/blob/main/schema/samplesheet_schema.json",
+  "title": "TTA_HBV-OBI_NGS samplesheet schema",
+  "description": "Schema for validating the pipeline samplesheet CSV",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["sample", "fastq_1"],
+    "additionalProperties": false,
+    "properties": {
+      "sample": {
+        "type": "string",
+        "description": "Unique sample identifier. Alphanumeric, underscore, hyphen, dot only.",
+        "pattern": "^[A-Za-z0-9_\\-\\.]+$",
+        "errorMessage": "sample must be alphanumeric (underscores, hyphens, dots allowed)"
+      },
+      "fastq_1": {
+        "type": "string",
+        "description": "Path to R1 FASTQ file (gzipped or uncompressed)",
+        "pattern": "^\\S+\\.f(ast)?q(\\.gz)?$",
+        "errorMessage": "fastq_1 must end with .fastq, .fastq.gz, .fq, or .fq.gz"
+      },
+      "fastq_2": {
+        "type": "string",
+        "description": "Path to R2 FASTQ file (paired-end). Leave empty for single-end.",
+        "pattern": "^(|\\S+\\.f(ast)?q(\\.gz)?)$",
+        "errorMessage": "fastq_2 must end with .fastq, .fastq.gz, .fq, or .fq.gz (or be empty)"
+      }
+    }
+  }
+}

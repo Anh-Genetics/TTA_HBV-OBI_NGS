@@ -1,0 +1,44 @@
+name: hbv_ngs
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  # Workflow manager (install separately via instructions)
+  # - nextflow>=23.04
+
+  # Quality control
+  - fastqc=0.12.1
+  - multiqc=1.21
+  - fastp=0.23.4
+
+  # Alignment / mapping
+  - bwa-mem2=2.2.1
+  - samtools=1.19
+  - htslib=1.19
+
+  # Variant calling
+  - ivar=1.4.2
+
+  # Multiple sequence alignment
+  - mafft=7.525
+
+  # Phylogenetics
+  - iqtree=2.2.6
+
+  # Python environment for helper scripts
+  - python=3.11
+  - pip
+  - biopython=1.83
+  - pandas=2.1
+  - numpy=1.26
+  - jinja2=3.1
+  - pyyaml=6.0
+  - requests=2.31
+
+  # Optional: bcftools for additional VCF operations
+  - bcftools=1.19
+
+  # pip-only packages
+  - pip:
+    - jsonschema>=4.17
