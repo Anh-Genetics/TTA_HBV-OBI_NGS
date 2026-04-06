@@ -1,0 +1,70 @@
+# OBI-associated mutation knowledge base for HBV surface antigen (HBsAg)
+# Regions: pre-S1, pre-S2, S (MHR, a-determinant)
+#
+# Columns:
+#   hbv_region    : S, pre-S1, pre-S2, MHR, a-determinant
+#   nt_position_hbv: approximate nucleotide position on HBV reference (J02203/AY128092)
+#   aa_position   : amino acid position in the surface protein (S reading frame)
+#   ref_aa        : reference amino acid (genotype-independent consensus)
+#   alt_aa        : reported mutant amino acid
+#   region_detail : sub-region description
+#   category      : A (strong evidence), B (moderate), C (preliminary/single report)
+#   effect        : diagnostic_escape, immune_escape, secretion_defect, replication_defect, structural
+#   mechanism     : e.g. conformational_change, glycosylation_loss, stop_codon, pre-S_deletion
+#   confidence    : high / medium / low
+#   references    : PMID or DOI (semicolon-separated)
+#
+# NOTE: Positions are approximate and referenced to genotype A (J02203).
+#       Always validate against the actual genotype consensus for your samples.
+# ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+hbv_region	nt_position_hbv	aa_position	ref_aa	alt_aa	region_detail	category	effect	mechanism	confidence	references
+S	518	100	Y	S	MHR	A	diagnostic_escape	conformational_change	high	PMID:9356495;PMID:28249985
+S	521	101	Q	R	MHR	A	diagnostic_escape	conformational_change	high	PMID:9356495
+S	533	105	P	R	MHR	B	diagnostic_escape	structural	medium	PMID:17207481
+S	563	115	T	N	MHR	A	diagnostic_escape;glycosylation_gain	glycosylation_gain	high	PMID:12417260
+S	566	116	T	N	MHR	A	diagnostic_escape;glycosylation_gain	glycosylation_gain	high	PMID:12417260
+S	575	119	G	R	MHR	B	diagnostic_escape	conformational_change	medium	PMID:17207481
+S	578	120	P	L	a-determinant	A	diagnostic_escape	conformational_change	high	PMID:9356495;PMID:14993785
+S	578	120	P	T	a-determinant	B	diagnostic_escape	conformational_change	medium	PMID:20148432
+S	584	122	R	P	a-determinant	A	diagnostic_escape	conformational_change	high	PMID:9356495
+S	584	122	K	R	a-determinant	B	diagnostic_escape	conformational_change	medium	PMID:20148432
+S	587	123	T	N	a-determinant	A	glycosylation_gain	glycosylation_gain	high	PMID:12417260
+S	590	124	C	R	a-determinant	A	diagnostic_escape;disulfide_loss	disulfide_bond_disruption	high	PMID:9356495
+S	590	124	C	Y	a-determinant	A	diagnostic_escape;disulfide_loss	disulfide_bond_disruption	high	PMID:9356495
+S	596	126	T	I	a-determinant	A	diagnostic_escape	conformational_change	high	PMID:9356495;PMID:14993785
+S	596	126	T	S	a-determinant	A	diagnostic_escape	conformational_change	high	PMID:9356495
+S	596	126	I	M	a-determinant	B	diagnostic_escape	conformational_change	medium	PMID:20148432
+S	599	127	P	H	a-determinant	B	immune_escape	conformational_change	medium	PMID:17207481
+S	599	127	P	L	a-determinant	B	immune_escape	conformational_change	medium	PMID:17207481
+S	605	129	Q	P	a-determinant	A	diagnostic_escape;immune_escape	conformational_change	high	PMID:9356495;PMID:28249985
+S	605	129	Q	R	a-determinant	A	diagnostic_escape;immune_escape	conformational_change	high	PMID:9356495
+S	605	129	Q	L	a-determinant	B	diagnostic_escape	conformational_change	medium	PMID:20148432
+S	617	133	M	T	a-determinant	A	diagnostic_escape	conformational_change	high	PMID:9356495;PMID:14993785
+S	617	133	M	L	a-determinant	B	immune_escape	conformational_change	medium	PMID:20148432
+S	620	134	Y	C	a-determinant	A	diagnostic_escape	disulfide_bond_disruption	high	PMID:9356495
+S	620	134	F	I	a-determinant	B	diagnostic_escape	conformational_change	medium	PMID:20148432
+S	620	134	F	L	a-determinant	B	diagnostic_escape	conformational_change	medium	PMID:20148432
+S	620	134	F	R	a-determinant	B	diagnostic_escape	conformational_change	medium	PMID:20148432
+S	626	136	S	P	a-determinant	B	immune_escape	structural	medium	PMID:17207481
+S	635	139	C	R	a-determinant	A	disulfide_loss	disulfide_bond_disruption	high	PMID:9356495
+S	638	140	T	I	MHR	B	secretion_defect	structural	medium	PMID:17207481
+S	641	141	K	E	MHR	B	immune_escape	charge_change	medium	PMID:17207481
+S	647	143	S	L	MHR	B	immune_escape	structural	medium	PMID:17207481
+S	650	144	D	A	a-determinant	A	diagnostic_escape;immune_escape	conformational_change	high	PMID:9356495;PMID:14993785
+S	650	144	D	E	a-determinant	A	diagnostic_escape;immune_escape	conformational_change	high	PMID:9356495
+S	650	144	D	N	a-determinant	A	diagnostic_escape;immune_escape	glycosylation_gain	high	PMID:9356495;PMID:28249985
+S	653	145	G	R	a-determinant	A	diagnostic_escape;immune_escape;vaccine_escape	conformational_change	high	PMID:9356495;PMID:7523544
+S	653	145	G	A	a-determinant	A	vaccine_escape;diagnostic_escape	conformational_change	high	PMID:9356495;PMID:7523544
+S	653	145	G	K	a-determinant	B	vaccine_escape	conformational_change	medium	PMID:20148432
+S	699	161	*	*	S	A	stop_codon;secretion_defect	premature_termination	high	PMID:28249985
+S	711	165	*	*	S	B	stop_codon;secretion_defect	premature_termination	medium	PMID:28249985
+S	717	167	S	L	S	B	secretion_defect	structural	medium	PMID:17207481
+S	725	170	N	S	S	B	glycosylation_loss	glycosylation_loss	medium	PMID:12417260
+S	728	171	*	*	S	A	stop_codon;secretion_defect	premature_termination	high	PMID:28249985
+S	734	173	*	*	S	A	stop_codon;secretion_defect	premature_termination	high	PMID:28249985
+S	743	176	V	A	S	B	secretion_defect	structural	medium	PMID:17207481
+S	751	179	*	*	S	A	stop_codon;secretion_defect	premature_termination	high	PMID:28249985
+pre-S2	3205	1	M	I	pre-S2_start	A	secretion_defect;expression_loss	start_codon_loss	high	PMID:15939836;PMID:28249985
+pre-S2	3205	1	M	T	pre-S2_start	A	secretion_defect;expression_loss	start_codon_loss	high	PMID:15939836
+pre-S1	2848	1	M	*	pre-S1_start	A	secretion_defect;expression_loss	start_codon_loss	high	PMID:15939836
+pre-S1	2848	1	M	I	pre-S1_start	B	secretion_defect;expression_loss	start_codon_loss	medium	PMID:15939836
