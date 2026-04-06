@@ -59,10 +59,9 @@ process HOST_FILTER {
     """
 
     stub:
-    def prefix = "${meta.id}"
     """
-    echo "" | gzip > ${prefix}_filtered_R1.fastq.gz
-    touch ${prefix}.host_filter.flagstat
+    echo "" | gzip > ${meta.id}_filtered_R1.fastq.gz
+    touch ${meta.id}.host_filter.flagstat
     touch versions.yml
     """
 }

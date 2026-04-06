@@ -18,7 +18,7 @@ process GENOTYPE_ASSIGN {
 
     script:
     def prefix    = "${meta.id}"
-    def tree_arg  = tree ? "--tree ${tree}" : ""
+    def tree_arg  = (tree && tree.name != 'NO_FILE') ? "--tree ${tree}" : ""
     def method    = params.genotype_method
     """
     genotype_assign.py \\

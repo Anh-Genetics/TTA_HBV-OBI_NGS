@@ -29,7 +29,7 @@ process MAFFT {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        mafft: \$(mafft --version 2>&1 | head -1 | sed 's/MAFFT v//')
+        mafft: \$(mafft --version 2>&1 | head -1 | sed 's/v//' | cut -d' ' -f1)
     END_VERSIONS
     """
 

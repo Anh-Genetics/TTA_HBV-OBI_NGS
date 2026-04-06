@@ -237,10 +237,10 @@ workflow {
             IQTREE.out.tree
         )
     } else {
-        // Blast/identity-based assignment
+        // Blast/identity-based assignment — pass NO_FILE sentinel for tree
         ch_genotype_result = GENOTYPE_ASSIGN(
             IVAR_CONSENSUS.out.fasta,
-            Channel.empty()
+            Channel.value(file("NO_FILE"))
         )
     }
 
@@ -258,7 +258,7 @@ workflow {
 
     MULTIQC(
         ch_multiqc_files,
-        file(params.multiqc_config)
+        file(params.multiqc_config, checkIfExists: false)
     )
 
     // 12. Per-sample and cohort report
